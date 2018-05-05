@@ -1,0 +1,60 @@
+\documentclass{ctexart}
+
+\usepackage{amsmath, amssymb}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+
+\begin{document}
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 信息论 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{ Information Theory }
+
+信息学主要是用来quantify在信号中信息的含量。在ML中， 信息学主要是用来描述随机分布或者量化不同随机分之间的相似性。
+
+\subsection{ Important Quantities }
+
+% 自信息
+\paragraph{Self Information}
+
+\begin{itemize}
+    \item Likely events should have low information content. If events are guaranteed to happen, they should have no information content.
+    
+    \item Less likely events should have higher information content.
+\end{itemize}
+
+The self-information of an random event \( x \): 
+\begin{equation}
+I(x) = - \log P(x)
+\end{equation}
+
+\( P(x) \) is the probability of the random event \( x \).
+
+% 熵
+\paragraph{Shannon Entropy}
+
+Self-information deals only with single event of a random variable. Shannon entropy quantify the amount of uncertainty in an entire probability distribution.
+
+TODO: Measures the randomness of a distribution.
+
+\begin{equation}
+    H( \text{x} ) = \E_{\text{x} \sim P} I(x) = -\E_{\text{x} \sim P} \log P(x)
+\end{equation}
+
+\text{x} is the random variable, \( x \) is the values of \text{x}.
+
+In other words, Shannon entropy of a distribution is the expected amount of information in an event drawn from that distribution.
+
+When \text{x} is a continuous random variable, Shannon entropy is known as the \textbf{differential entropy}.
+
+% KL 散度
+\paragraph{KL Divergence}
+
+In the context of decision tree, KL-Divergence is also known as \textbf{Information Gain} or \textbf{Relative Entropy}.
+
+
+\end{document}
